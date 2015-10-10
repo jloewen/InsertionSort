@@ -16,13 +16,12 @@ public class InsertionSort {
     // In the end move the ith item to jth position.
     public void sort(){
         for(int i =0; i < values.length; i ++){
-            for(int j=i; j > 0; j-- ){
-                if(values[j] < values[j-1]){
-                    swap(j, j-1);
-                }else{
-                    break;
-                }
+            int j = i;
+            int item = values[j];
+            for(; j > 0 && item < values[j-1]; j-- ){
+                values[j] = values[j-1];
             }
+            values[j]=item;
         }
     }
 
